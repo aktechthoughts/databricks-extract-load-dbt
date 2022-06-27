@@ -3,6 +3,11 @@
 
 # COMMAND ----------
 
+## Initilize token from the secret.
+token = dbutils.secrets.get(scope="scope", key="key")
+
+# COMMAND ----------
+
 ## Install required library.
 #%pip install git+https://abhishek_ku@yahoo.com:$token@https://github.com/aktechthoughts/databricks-extract-load-dbt/blob/main/requirements.txt
 
