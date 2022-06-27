@@ -1,0 +1,10 @@
+{
+  "name": "job-name",
+  "existing_cluster_id": "cluster-id",
+  "timeout_seconds": 3600,
+  "max_retries": 1,
+  "notebook_task": {
+    "notebook_path": "notebook-path",
+    "base_parameters": {}
+  }
+}
