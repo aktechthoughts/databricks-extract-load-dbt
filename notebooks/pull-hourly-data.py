@@ -16,7 +16,6 @@ df = pd.json_normalize(result['data'])
 df['ts'] = ts
 df['version'] = ver
 
-df.to_parquet('df.parquet.gzip', compression='gzip')
+date_time = now.strftime("%m%d%Y%H%M%S")
+df.to_parquet('movement_'+date_time+'.gzip', compression='gzip')
 
-df1=pd.read_parquet('df.parquet.gzip')
-print(df1)
