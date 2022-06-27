@@ -19,6 +19,7 @@
 
 import urllib.request, json,pandas as pd
 from datetime import datetime
+from os import environ
 url = "https://start.vag.de/dm-poc/api/v2/fahrten"
 response = urllib.request.urlopen(url)
 result = json.loads(response.read())
@@ -41,8 +42,13 @@ df['version'] = ver
 # Save data in parquet file.
 
 date_time = datetime.now().strftime("%Y%m%d%H%M%S")
-df.to_parquet('/dbfs/bronze/movement_'+date_time+'.gzip', compression='gzip')
 
+env = environ.get("ENV"); 
+
+if env is not None:     
+    df.to_parquet('/dbfs/bronze/movement_'+date_time+'.gzip', compression='gzip')
+else:
+    df.to_parquet('./dbfs/bronze/movement_'+date_time+'.gzip', compression='gzip')
 #
 
 # COMMAND ----------
