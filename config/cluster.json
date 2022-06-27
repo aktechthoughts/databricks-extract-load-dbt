@@ -19,7 +19,8 @@
         "ResourceClass": "SingleNode"
     },
     "spark_env_vars": {
-        "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+        "PYSPARK_PYTHON": "/databricks/python3/bin/python3",
+        "ENV": "aktechthoughts-dev"
     },
     "autotermination_minutes": 20,
     "enable_elastic_disk": true,
