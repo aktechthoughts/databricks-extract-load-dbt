@@ -3,6 +3,11 @@
 
 # COMMAND ----------
 
+## Install required library.
+#%pip install git+https://abhishek_ku@yahoo.com:$token@https://github.com/aktechthoughts/databricks-extract-load-dbt/blob/main/requirements.txt
+
+# COMMAND ----------
+
 ## Read data from remote api
 
 import urllib.request, json, pandas as pd
@@ -29,3 +34,5 @@ df['version'] = ver
 
 date_time = now.strftime("%m%d%Y%H%M%S")
 df.to_parquet('/dbfs/bronze/movement_'+date_time+'.gzip', compression='gzip')
+
+#
