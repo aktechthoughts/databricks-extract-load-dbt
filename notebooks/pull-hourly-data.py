@@ -4,12 +4,10 @@
 # COMMAND ----------
 
 ## Initilize token from the secret.
-token = dbutils.secrets.get(scope="scope", key="key")
+#token = dbutils.secrets.get(scope="aktechthoughts", key="github-token") # Not required for next command.
+#pip install git+https://abhishek_ku@yahoo.com:$token@https://github.com/aktechthoughts/databricks-extract-load-dbt/blob/main/requirements.txt
+#%pip install -r https://raw.githubusercontent.com/aktechthoughts/databricks-extract-load-dbt/main/requirements.txt
 
-# COMMAND ----------
-
-## Install required library.
-#%pip install git+https://abhishek_ku@yahoo.com:$token@https://github.com/aktechthoughts/databricks-extract-load-dbt/blob/main/requirements.txt
 
 # COMMAND ----------
 

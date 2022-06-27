@@ -28,7 +28,12 @@ databricks fs  --recursive cp ~/local_data/ dbfs:/tmp/generated_raw_csv_data
 databricks clusters delete --cluster-id 0xx-xx-xxx-vh0au
 ```
 
- 
+## Add secret to databricks environment (aktechthoughts)
+```
+databricks secrets create-scope --scope aktechthoughts
+databricks secrets put --scope aktechthoughts --key github-token
+```
+
 ## Add your files
 Follow Databricks Documentation at
 https://docs.databricks.com/dev-tools/databricks-connect.html#set-up-your-ide-or-notebook-server
