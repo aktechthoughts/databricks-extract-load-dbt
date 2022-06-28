@@ -57,25 +57,14 @@ else:
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC select "${my.paths.file_name}";
-
-# COMMAND ----------
-
-# MAGIC %sql
 # MAGIC DROP TABLE IF EXISTS movement;
 # MAGIC 
 # MAGIC CREATE TABLE movement
 # MAGIC     USING PARQUET
 # MAGIC     LOCATION "${my.paths.file_name}"
 # MAGIC     COMMENT 'Bronze Table for movement';
-# MAGIC     
-# MAGIC DESCRIBE EXTENDED movement;
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC select count(*) from movement;
-
-# COMMAND ----------
-
-
