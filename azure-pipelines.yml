@@ -1,0 +1,23 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+schedules:
+- cron: "0 * * * *"
+  displayName: Hourly
+  branches:
+    include:
+    - master
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
+- script: git clone git@github.com:aktechthoughts/databricks-extract-load-dbt.git
+  displayName: 'Cloned the repository.'
+
+- script: |
+    cd databricks-extract-load-dbt
+    sh ./scripts/start.sh
+    sh ./scripts/run.sh
+    sh ./scripts/stop.sh
+  displayName: 'Run a multi-line script'
