@@ -2,7 +2,7 @@
 #set -x
 
 notbook_path="/Repos/abhishek_ku@yahoo.com/databricks-extract-load-dbt/notebooks/"
-notbook_name="pull-hourly-data"
+notbook_name="$1"
 
 cluster_id=$(databricks clusters list | grep RUNNING | awk '{ print $1}')
 
