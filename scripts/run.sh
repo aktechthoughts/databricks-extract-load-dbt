@@ -19,7 +19,6 @@ while [ $job_status = "RUNNING" ] || [ $job_status = "PENDING" ]
 do
     sleep 2
     job_status=$(databricks runs get --run-id $RUN_ID | jq -r '.state.life_cycle_state')
-    echo Status $job_status
 done
 
 RESULT=$(databricks runs get-output --run-id $RUN_ID)
@@ -32,4 +31,9 @@ then
     echo "##vso[task.complete result=Failed;done=true;]$RESULT_MESSAGE"
 fi
 
-echo $RESULT | jq '.metadata.state.result'
+result=$(echo $RESULT | jq '.metadata.state.result')
+
+if [ $result = "null" ]
+then
+echo "The job "$notbook_name" is finished."
+fi
