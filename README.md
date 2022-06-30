@@ -52,7 +52,7 @@ connection-to-elt-databricks:
     dev:
       type: databricks
       schema: gold
-      host: https://adb-20138829935.15.azuredatabricks.net
+      host: adb-20138829935.15.azuredatabricks.net
       http_path: sql/protocolv1/o/20138829935/0630-yyyyy-26mie2ei
       token: dapi6yyyyy941aa9837bec7f761aae-2
       threads: 1
@@ -72,6 +72,13 @@ profile: 'connection-to-elt-databricks'
 
 models:
 
+```
+
+#### 6. Initial dbt tests.
+
+```bash
+dbt test
+dbt debug
 ```
 
 ### 3. Follow Databricks Documentation at
