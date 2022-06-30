@@ -74,8 +74,7 @@ models:
 
 ```
 
-## 3. Add your files
-#### Follow Databricks Documentation at
+### 3. Follow Databricks Documentation at
 https://docs.databricks.com/dev-tools/databricks-connect.html#set-up-your-ide-or-notebook-server
 https://docs.getdbt.com/reference/dbt_project.yml
 
