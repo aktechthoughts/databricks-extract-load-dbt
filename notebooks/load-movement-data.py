@@ -30,7 +30,16 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC select count(*) from silver.movement;
+# MAGIC select 
+# MAGIC   date_format(ts, 'yyyy-MM-dd hh') as dte ,
+# MAGIC   produkt,
+# MAGIC   count(*) 
+# MAGIC from 
+# MAGIC   silver.movement 
+# MAGIC group by 
+# MAGIC   ts,produkt 
+# MAGIC order by 
+# MAGIC   date_format(ts, 'yyyy-MM-dd hh') desc , produkt;
 
 # COMMAND ----------
 
