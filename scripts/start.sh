@@ -7,8 +7,15 @@ cluster_status=$(echo "$cluster_id_status"| awk -F"|" '{ print $2 }')
 
 if [[ "$cluster_status" = "RUNNING" ]]
 then
-    echo "The clusrer id:"$cluster_id" is started."
+    echo "The clusrer id:"$cluster_id" is running."
     exit 0
+fi
+
+cluster_status=$(databricks clusters list | grep 'TERMINATED' | grep $CLUSTER_ID | awk '{ print $3 }')
+
+if [[ ! -z "$CLUSTER_ID" ]] && [[ "$cluster_status" = "TERMINATED" ]]
+then
+  databricks clusters restart --cluster-id $CLUSTER_ID > /dev/null 2>&1 
 fi
 
 if [[ "$cluster_status" = "" ]]
