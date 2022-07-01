@@ -74,11 +74,16 @@ models:
 
 ```
 
-#### 6. Initial dbt tests.
+#### 6. Initial dbt tests using default profile dir.
 
 ```bash
 dbt test
 dbt debug
+```
+#### 7. Run dbt models  
+
+```bash
+dbt run  
 ```
 
 ### 3. Follow Databricks Documentation at
