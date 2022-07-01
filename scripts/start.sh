@@ -15,7 +15,7 @@ cluster_status=$(databricks clusters list | grep 'TERMINATED' | grep $CLUSTER_ID
 
 if [[ ! -z "$CLUSTER_ID" ]] && [[ "$cluster_status" = "TERMINATED" ]]
 then
-  databricks clusters restart --cluster-id $CLUSTER_ID > /dev/null 2>&1 
+  databricks clusters start --cluster-id $CLUSTER_ID > /dev/null 2>&1 
 fi
 
 if [[ "$cluster_status" = "" ]]
