@@ -1,27 +1,27 @@
 # Databricks notebook source
-# This notebook is to load movement data into silver table.
+# This notebook is to load movement data into bronze table.
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC CREATE SCHEMA IF NOT EXISTS silver;
+# MAGIC CREATE SCHEMA IF NOT EXISTS bronze;
 
 # COMMAND ----------
 
-## Crate a silver table if it doesn't exists
+## Crate a bronze table if it doesn't exists
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC CREATE TABLE IF NOT EXISTS 
-# MAGIC   silver.movement 
+# MAGIC   bronze.movement 
 # MAGIC     PARTITIONED BY (fahrtStart)
 # MAGIC     SELECT * FROM movement where 1=2;
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC MERGE INTO silver.movement 
+# MAGIC MERGE INTO bronze.movement 
 # MAGIC USING movement 
 # MAGIC ON 1=2
 # MAGIC WHEN NOT MATCHED
@@ -35,7 +35,7 @@
 # MAGIC   produkt,
 # MAGIC   count(*) 
 # MAGIC from 
-# MAGIC   silver.movement 
+# MAGIC   bronze.movement 
 # MAGIC group by 
 # MAGIC   ts,produkt 
 # MAGIC order by 
