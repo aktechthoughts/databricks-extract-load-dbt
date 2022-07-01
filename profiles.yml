@@ -1,0 +1,20 @@
+connection-to-elt-databricks:
+
+  outputs:
+    dev:
+      type: databricks
+      schema: gold
+      host: adb-201384xxxxx9935.15.azuredatabricks.net
+      http_path: sql/protocolv1/o/201384xxxxx9935/0630-202957-26mie2ei
+      token: dapi6699yyyyyyyy9837bec7f761aae-2
+      threads: 1
+
+    prod:
+      type: databricks
+      schema: gold
+      host: adb-201384xxxxx9935.15.azuredatabricks-prod.net
+      http_path: sql/protocolv1/o/201384xxxxx9935/0630-202957-26mie2ei
+      token: dapi6699zzzzzzz9837bec7f761aae-2
+      threads: 1
+
+  target: dev
