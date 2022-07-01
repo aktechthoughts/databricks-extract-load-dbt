@@ -1,0 +1,6 @@
+
+select 
+    * 
+from
+    silver.movement
+
