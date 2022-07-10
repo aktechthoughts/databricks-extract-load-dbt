@@ -4,7 +4,7 @@ models:
   - name: movement
     description: Table containing the movement of the vehicles.
     columns:
-      - name: fahrtnummer
+      - name: journey_number
         description: The unique number to identify journey of a bus.
         tests:
           - not_null
