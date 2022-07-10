@@ -1,3 +1,5 @@
+{{ config(schema='gold') }} -- This is target custom target schema.
+
 with daily_movement as (
     select 
         journey_number,
