@@ -5,7 +5,7 @@ description = "This is example of databricks."
 authors = ["Abhishek Kumar <abhishek_ku@yahoo.com>"]
 
 [tool.poetry.dependencies]
-python = "3.10"
+python = "^3.10"
 
 [tool.poetry.dev-dependencies]
 
