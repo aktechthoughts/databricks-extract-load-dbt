@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
+
 
 select 
     bus_number,

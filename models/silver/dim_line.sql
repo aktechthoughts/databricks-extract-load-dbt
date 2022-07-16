@@ -1,4 +1,11 @@
 
+{{
+    config(
+        materialized='incremental'
+    )
+}}
+
+
 select 
     line_number,
     line_name,
